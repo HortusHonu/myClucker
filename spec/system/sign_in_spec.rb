@@ -1,12 +1,24 @@
 require 'rails_helper'
 
 RSpec.describe 'Sign in', type: :system do
-	it 'works with default user' do
-		user = FactoryBot.create(:user)
-		visit new_user_session_path	
-		fill_in 'Email', with: user.email
-		fill_in 'Password', with: user.password
-		click_on 'Log in'
-		expect(page).to have_content('Sign out')
+	context 'with valid credentials' do
+		it 'lets the user log in' do
+			user = FactoryBot.create(:user)
+			visit new_user_session_path	
+			fill_in 'Email', with: user.email
+			fill_in 'Password', with: user.password
+			click_on 'Log in'
+			expect(page).to have_content('Sign out')
+		end	
+	end
+
+	context 'with invalid credentials' do
+		it 'does not the user log in' do
+			visit new_user_session_path	
+			fill_in 'Email', with: 'asdf@example.com'
+			fill_in 'Password', with: 'badpassword'
+			click_on 'Log in'
+			expect(page).to have_content('Invalid Email or password')
+		end	
 	end
 end
