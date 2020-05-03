@@ -33,8 +33,7 @@ group :development, :test do
   gem 'capybara'
 
   # The following two gems aid with the nuts and bolts of interacting with the browser
-  gem 'selenium-webdriver'
-  gem 'chromedriver-helper' 
+  gem 'webdrivers'
 end
 
 group :development do
