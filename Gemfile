@@ -25,6 +25,16 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+  # The RSpec testing framework
+  gem 'rspec-rails'
+
+  # Capybara, the library thar allows us to interact with the browser using Ruby
+  gem 'capybara'
+
+  # The following two gems aid with the nuts and bolts of interacting with the browser
+  gem 'selenium-webdriver'
+  gem 'chromedriver-helper' 
 end
 
 group :development do
