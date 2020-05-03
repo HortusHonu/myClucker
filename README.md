@@ -20,3 +20,4 @@ $ rails db:schema:load
 ```
 $ rails s -p3030
 ```
+# myCluckr
