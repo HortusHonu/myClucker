@@ -23,8 +23,8 @@ gem 'devise'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Call 'binding.pry' anywhere in the code to stop execution and get a debugger console
+  gem 'pry'
 
   # The RSpec testing framework
   gem 'rspec-rails'
@@ -34,6 +34,9 @@ group :development, :test do
 
   # The following two gems aid with the nuts and bolts of interacting with the browser
   gem 'webdrivers'
+
+  # This is used to setup data needed for tests
+  gem 'factory_bot_rails'
 end
 
 group :development do
